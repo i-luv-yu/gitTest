@@ -1,0 +1,71 @@
+전문건설공제조합 처리 순서
+
+DB 접속 아이피 10.10.1.55
+
+web 은 이름에 웹팩스
+
+1. 
+
+CREATE TABLE tblWFEnBlocDeleteFaxConfig
+(
+	tblKey 				Varchar(32) 	NOT NULL, 
+	ComKey 				Varchar(32) 	NOT NULL, 
+	IsUse 				Varchar(1) 		NOT NULL, 
+	IsReceiveBox 		Varchar(1) 		NOT NULL, 
+	IsReservationBox 	Varchar(1) 		NOT NULL, 
+	IsSendBox 			Varchar(1) 		NOT NULL, 
+	IsBulkBox 			Varchar(1) 		NOT NULL, 
+	IsDeleteBox 		Varchar(1) 		NOT NULL, 
+	IsDeleteHistory 	Varchar(1) 		NOT NULL, 
+	IsSpamBox 			Varchar(1) 		NOT NULL, 
+	IsGlobalBox 		Varchar(1) 		NOT NULL, 
+	IsFaxBox 			Varchar(1) 		NOT NULL, 
+	TermValue 			int 			NOT NULL, 
+	Type 				Varchar(100) 	NOT NULL, 
+	AddDate 			Varchar(17) 	NOT NULL, 
+	ModifyDate 			Varchar(17) 	,
+	
+	Constraint PK_tblWFEnBlocDeleteFaxConfig Primary Key (tblKey)
+);
+
+CREATE TABLE tblWFEnBlocDeleteFax
+(
+	tblKey 				Varchar(32) 	NOT NULL, 
+	BoxKey 				Varchar(32) 	NOT NULL, 
+	FaxKey 				Varchar(32) 	NOT NULL, 
+	ComKey 				Varchar(32) 	NOT NULL, 
+	RsDate 				Varchar(17) 	NOT NULL, 
+	Subject 			Varchar(500) 	NOT NULL, 
+	F_Pages 			int 			NOT NULL, 
+	RsComName 			Varchar(500) 	NOT NULL, 
+	RsUserName 			Varchar(500) 	NOT NULL, 
+	UserName 			Varchar(500) 	NOT NULL, 
+	SendFaxNumber 		Varchar(100) 	NOT NULL, 
+	MDMID 				int 			NOT NULL, 
+	MDMFAXNAME 			Varchar(100) 	NOT NULL, 
+	DOCID 				Varchar(32) 	NOT NULL, 
+	TiffFileName 		Varchar(32) 	NOT NULL, 
+	AddDate 			Varchar(17) 	NOT NULL, 
+	
+	Constraint PK_tblWFEnBlocDeleteFax Primary Key (tblKey)
+);
+
+
+
+
+
+
+
+
+
+
+
+2. 테이블 생성 후에
+
+
+
+INSERT INTO tblwfenblocdeletefaxconfig (tblKey, ComKey, IsUse, IsReceiveBox, IsReservationBox, IsSendBox, IsBulkBox, IsDeleteBox, IsDeleteHistory, IsSpamBox, IsGlobalBox, IsFaxBox, TermValue, Type, AddDate, ModifyDate) VALUES
+	('A1CEDBF63F054C8F968D82779D2711F1', 'BDA1CF5FF2964E8098CE517AB4183149', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 6, 'month', '20170124141416877', '20170426094800994');
+
+
+
